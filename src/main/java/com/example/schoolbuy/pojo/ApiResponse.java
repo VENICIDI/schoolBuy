@@ -6,13 +6,13 @@ import lombok.Data;
 public class ApiResponse<T> {
     private Integer code;
     private String message;
-    private T data;
+    private T result;
 
     public static <T> ApiResponse<T> success(T data) {
         ApiResponse<T> response = new ApiResponse<>();
         response.setCode(200);
         response.setMessage("操作成功");
-        response.setData(data);
+        response.setResult(data);
         return response;
     }
 
@@ -20,7 +20,7 @@ public class ApiResponse<T> {
         ApiResponse<T> response = new ApiResponse<>();
         response.setCode(200);
         response.setMessage(message);
-        response.setData(data);
+        response.setResult(data);
         return response;
     }
 
